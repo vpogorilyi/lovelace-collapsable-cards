@@ -239,10 +239,6 @@ class CollapsableCards extends HTMLElement {
         border-radius: var(--ha-card-border-radius, 4px);
         ${this._config.buttonStyle || ''}
       }
-      .toggle-button-${this.id}:focus {
-        outline: none;
-        background-color: var(--divider-color);
-      }
 
       .card-list-${this.id} {
         position: absolute;
