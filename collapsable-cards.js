@@ -107,16 +107,22 @@ class CollapsableCards extends HTMLElement {
 			toggleButton.innerHTML = this._config.title || 'Toggle';
 		}
 		toggleButton.className = 'card-content toggle-button-' + this.id
-		toggleButton.addEventListener('click', () => {
-			this.isToggled = !this.isToggled
-			this.styleCard(this.isToggled)
-		})
+		// toggleButton.addEventListener('click', () => {
+		// 	this.isToggled = !this.isToggled
+		// 	this.styleCard(this.isToggled)
+		// })
 
 		const icon = document.createElement('ha-icon');
 		icon.className = 'toggle-button__icon-' + this.id
 		icon.setAttribute('icon', 'mdi:chevron-down')
 		this.icon = icon
-		toggleButton.appendChild(icon)
+		icon.addEventListener('click', () => {
+			this.isToggled = !this.isToggled
+			this.styleCard(this.isToggled)
+		})
+
+
+        toggleButton.appendChild(icon)
 
 		return toggleButton
 	}
